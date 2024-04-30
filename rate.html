@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="x-icon" href="img/mlogo2.jpg">
+    <title>Payment Cab</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <style>
+        /* Center content in the middle of the page */
+        .center-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .rating-container {
+            background-color: #171717;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px; /* Increase the max-width to make it wider */
+            width: 100%;
+            animation: fadeInUp 0.5s ease forwards;
+            margin-bottom: 50px;
+        }
+        
+
+        .rating-container h1 {
+            margin-bottom: 20px;
+            color: #fafafa;
+        }
+
+        .rating-options {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .emoji-label {
+            cursor: pointer;
+            font-size: 40px;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-radius: 50%; /* Default border-radius */
+            margin-right: 2px; /* Add right margin for spacing between emoji labels */
+        }
+        
+        /* Media query for smaller screens (e.g., phones) */
+        @media (max-width: 768px) {
+            .emoji-label {
+                border-radius: 10px; /* Adjusted border-radius for smaller screens */
+            }
+            .rating-container{
+                margin: auto;
+            }
+                
+        }
+
+        .rating-options input[type="radio"] {
+            display: none;
+        }
+
+        /* Individual color styles for each emoji label */
+        .angry {
+            background-color: #FF5733; /* Orange */
+        }
+
+        .not-happy {
+            background-color: #FFC300; /* Yellow */
+        }
+
+        .neutral {
+            background-color: #3498DB; /* Blue */
+        }
+
+        .happy {
+            background-color: #27AE60; /* Green */
+        }
+
+        .super-happy {
+            background-color: #9B59B6; /* Purple */
+        }
+
+        .emoji-label:hover {
+            transform: scale(1.1); /* Scale up on hover */
+        }
+
+        .rating-options input[type="radio"]:checked + .emoji-label {
+            transform: scale(1.2); /* Scale up when selected */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow when selected */
+            border-radius: 50%; /* Apply border-radius when selected */
+            color: #fff; /* Text color when selected */
+        }
+
+        /* Styling for the input field and label */
+        .input-container {
+            position: relative;
+            margin: 50px auto;
+            width: 200px;
+        }
+
+        .input-container input[type="text"] {
+            font-size: 20px;
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            padding: 5px 0;
+            background-color: transparent;
+            outline: none;
+            color: white;
+        }
+
+        .input-container .label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #ccc;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .input-container input[type="text"]:focus ~ .label,
+        .input-container input[type="text"]:valid ~ .label {
+            top: -20px;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .input-container .underline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 100%; /* Adjust the width to match the width of the input field */
+            background-color: #333;
+            transform: scaleX(0);
+            transition: all 0.3s ease;
+        }
+        
+
+        .input-container input[type="text"]:focus ~ .underline,
+        .input-container input[type="text"]:valid ~ .underline {
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Payment <sup>cab</sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Information
+            </div>
+            
+            <!-- Nav Item - Pay Info Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="pay.html" 
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <span>Payment</span>
+                </a>
+            </li>
+
+            
+            <!-- Nav Item - Rate Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="rate.html"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-star"></i>
+                    <span>Rate Us!</span>
+                </a>
+            </li>
+            
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        
+                        
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Gabb De Leon</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/me.jpg">
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Aldrin Remalante</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/ald.jpg">
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active">Rate Us!</li>
+                    </ol>
+
+                    
+                        
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+            
+                
+            <div class="container-fluid center-content">
+                <!-- Rating Section -->
+                <div class="rating-container">
+                    <h1>Rate Our Work!</h1>
+                    <div class="rating-options">
+                        <input type="radio" id="angry" name="satisfaction" value="Angry">
+                        <label for="angry" class="emoji-label angry">😡</label>
+
+                        <input type="radio" id="not-happy" name="satisfaction" value="Not Happy">
+                        <label for="not-happy" class="emoji-label not-happy">😕</label>
+
+                        <input type="radio" id="neutral" name="satisfaction" value="Neutral">
+                        <label for="neutral" class="emoji-label neutral">😐</label>
+
+                        <input type="radio" id="happy" name="satisfaction" value="Happy">
+                        <label for="happy" class="emoji-label happy">😊</label>
+
+                        <input type="radio" id="super-happy" name="satisfaction" value="Super Happy">
+                        <label for="super-happy" class="emoji-label super-happy">😄</label>
+                    </div>
+                    <!-- User Input Field -->
+                    <div class="input-container">
+                        <input type="text" id="input" required>
+                        <label for="input" class="label">Rated By:</label>
+                        <div class="underline"></div>
+                    </div>
+                    <p>Please send your screenshot to us!<br> Thank you!</p>
+                </div>
+            </div>
+               
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; GWD & AR 2024</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="x-icon" href="img/mlogo2.jpg">
+    <title>Payment Cab</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <style>
+        #about{
+            padding: 80px 0;
+            color: #ababab;
+            font-size: 18px;
+        }
+        
+        .row{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .about-col-1{
+            flex-basis: 35%;
+        }
+        .about-col-1 img{
+            width: 100%;
+            height: 90vh;
+            border-radius: 15px;
+        }
+        
+        .about-col-2{
+            flex-basis: 90%;
+            margin-left: 5%;
+            text-align:justify ;
+            color: #171717;
+        }
+        
+        .subtitle{
+            font-size: 60px;
+            font-weight: 600;
+            color: #171717;
+        }
+        
+        #services{
+            padding: 50px;
+        }
+        
+
+        .services-list{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px , 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .services-list div{
+            background: #171717;
+            padding: 40px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 300;
+            border-radius: 10px;
+            transition: background 0.5s, transform 0.5s;
+        }
+        
+        .services-list div i{
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+        
+        .services-list div h2{
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .services-list div a{
+            text-decoration: none;
+            color: #f3f3f3;
+            font-size: 12px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        
+        .services-list div:hover{
+            background: #216ec5;
+            transform: translateY(-10px);
+        
+        }
+        </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Payment <sup>cab</sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Information
+            </div>
+            
+            <!-- Nav Item - Pay Info Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="pay.html" 
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <span>Payment</span>
+                </a>
+            </li>
+            
+            <!-- Nav Item - Rate Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="rate.html"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-star"></i>
+                    <span>Rate Us!</span>
+                </a>
+            </li>
+            
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Gabb De Leon</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/me.jpg">
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Aldrin Remalante</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/ald.jpg">
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Home</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    </ol>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+            <div id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="about-col-1">
+                        </div>
+                        <div class="about-col-2">
+                            <h1 class="subtitle">About Page</h1>
+                            <p>Welcome to Payment Cab! Discover seamless payment solutions with us. Our user-friendly home page offers easy access to our services and insights into our mission and team. Navigate through our range of payment options, including GCash QR codes, GCash numbers, and more, on our Payment Page. Stay connected with us on Facebook for updates and promotions. Share your experience and rate our services on our Rate Us page to help us improve. Join us on this journey towards convenient and secure payments with Payment Cab.<br>
+
+                               <br><strong>Purpose of the Page:</strong> <br>
+                                The purpose of our website is to provide a convenient and efficient platform for making payments. Through easy navigation, users can explore our services, choose their preferred payment method, and complete transactions seamlessly. Additionally, our website serves as a channel for users to learn more about our company, mission, and team, as well as share their feedback and experiences. We aim to simplify the payment process and enhance user satisfaction with our reliable and secure payment solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="services">
+                <div class="services">
+                    <h1 class="subtitle">Our Services</h1>
+                    <div class="services-list">
+                        <div>
+                           <i class="fab fa-python"></i>
+                            <h2>C++/Python</h2>
+                            <p>
+                                We are actively refining our skills in C++ and Python, dedicating ourselves to mastery in these languages. Additionally, we aspire to expand our repertoire by delving into Java in the future, although our current focus remains on C++ and Python.</p>
+                            <a href="#">Learn more</a>
+                        </div>
+                        <div>
+                            <i class="fas fa-code"></i>
+                            <h2>Web Design</h2>
+                            <p>We possess expertise in web design, honed through dedicated practice and hobbyist projects. Proficient in HTML, CSS, and with a working knowledge of JavaScript, we specialize in creating multiple website projects.
+                            </p>
+                            <a href="#">Learn more</a>
+                        </div>
+                        <div>
+                            <i class="fas fa-cogs"></i>
+                            <h2>System Website</h2>
+                            <p>One of us excels in developing system websites, adept at integrating various features, ensuring functionality, and crafting appealing interfaces. We are not experts but we possess the capability to deliver results comparable to those of experts in the field.</p>
+                            <a href="#">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; GWD & AR 2024</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="x-icon" href="img/mlogo2.jpg">
+    <title>Payment Cab</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <style>
+        .container-fluid {
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .center-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .card {
+            width: 300px;
+            height: 350px;
+            max-height: 300px;
+            background: #f5f5f5;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .card-avatar  {
+            --size: 100px;
+            width: var(--size);
+            height: var(--size);
+            border-radius: 50%;
+            background: url('img/me.jpg') center/cover no-repeat; /* Avatar image background */
+            margin-bottom: 1rem;
+            margin-left: 30px;
+        }
+        .card-avatar2{
+            --size: 100px;
+            width: var(--size);
+            height: var(--size);
+            border-radius: 50%;
+            background: url('img/ald.jpg') center/cover no-repeat; /* Avatar image background */
+            margin-bottom: 1rem;
+            margin-left: 30px;
+        }
+        
+        .card-info {
+            text-align: center;
+        }
+        
+        .card-title {
+            color: #333;
+            font-size: 1.5em;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-subtitle {
+            color: #859ba8;
+            font-size: 0.8em;
+            margin-bottom: 1rem;
+        }
+        
+        .card-social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .card-social__item {
+            list-style: none;
+            align-items: center;
+            margin-right: 20px;
+        }
+        
+        .card-social__item a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: #515F65;
+            color: #fff;
+            font-size: 1.2em;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            text-decoration: none;
+        }
+        
+        .card-social__item a:hover {
+            background-color: #232323;
+            transform: scale(1.1);
+        }
+        
+        .card:hover {
+            box-shadow: 0 8px 50px rgba(35, 35, 35, 0.2); /* Adjusted shadow color and intensity */
+        }
+        
+        .card:hover .card-info {
+            transform: translateY(-5%);
+        }
+        
+        .card:hover .card-social {
+            transform: translateY(0); /* Adjusted to move icons to the center */
+            opacity: 1;
+        }
+        
+        .card-avatar:hover {
+            transform: scale(1.1);
+        }
+/* Button styles */
+.qr-button {
+    background-color: #515F65;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px; /* Adjust width as needed */
+    height: 40px; /* Adjust height to match width */
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.qr-button:hover {
+    background-color: #232323;
+}
+
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            max-width: 700px;
+            height: 80%;
+            max-height: 500px;
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+        }
+        @media only screen and (max-width: 768px) {
+            /* Styles for phones and smaller tablets */
+            .modal-img {
+                width: 100%;
+                height: auto;
+                margin-top: 10vh; /* Use viewport height for margin */
+            }
+        }
+        
+        @media only screen and (min-width: 769px) {
+            /* Styles for laptops and larger devices */
+            .modal-img {
+                width: 48%;
+                height: auto;
+                margin-top: 15vh; /* Use viewport height for margin */
+            }
+        }
+        
+    </style>
+    
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Payment <sup>cab</sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span></a>
+            </li>
+            
+            </ol>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Information
+            </div>
+            
+            <!-- Nav Item - Pay Info Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="pay.html" 
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <span>Payment</span>
+                </a>
+            </li>
+
+            
+            <!-- Nav Item - Rate Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="rate.html"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-star"></i>
+                    <span>Rate Us!</span>
+                </a>
+            </li>
+            
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+                    
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Gabb De Leon</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/me.jpg">
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Aldrin Remalante</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/ald.jpg">
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Payment Dashboard</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active">Payment Dashboard</li>
+                    </ol>
+
+                </div>
+                <!-- /.container-fluid -->
+
+
+         
+            <!-- End of Main Content -->
+            <div class="container-fluid center-content">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-info">
+                            <div class="card-avatar"></div>
+                            <div class="card-title">G. De Leon</div>
+                            <div class="card-subtitle">CEO & Student</div>
+                        </div>
+                        <ul class="card-social">
+                            <li class="card-social__item">
+                                <button class="qr-button" data-target="qrModal1"><i class="fas fa-qrcode fa-lg"></i></button>
+                            </li>
+                            <li class="card-social__item">
+                                <a href="https://www.facebook.com/Gaboo022/"><i class="fab fa-facebook"></i></a>
+                            </li>
+                            <li class="card-social__item">
+                                <a href="img/Payment - Gabb.pdf" download ><i class="fas fa-download"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-info">
+                            <div class="card-avatar2"></div>
+                            <div class="card-title">A. Remalante</div>
+                            <div class="card-subtitle">Co-CEO & Student</div>
+                        </div>
+                        <ul class="card-social">
+                            <li class="card-social__item">
+                                <button class="qr-button" data-target="qrModal2"><i class="fas fa-qrcode fa-lg"></i></button>
+                            </li>
+                            <li class="card-social__item">
+                                <a href="https://www.facebook.com/aldrin.remalante"><i class="fab fa-facebook"></i></a>
+                            </li>
+                            <li class="card-social__item">
+                                <a href="img/Payment - Aldrin.pdf" download ><i class="fas fa-download"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Modal for QR Code 1 -->
+                    <div id="qrModal1" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img id="qrImage1" class="modal-img" src="img/mygcash.jpg" alt="QR Code 1">
+                        </div>
+                    </div>
+
+                    <!-- Modal for QR Code 2 -->
+                    <div id="qrModal2" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img id="qrImage2" class="modal-img" src="img/Acash.jpg" alt="QR Code 2">
+                        </div>
+                    </div>
+
+            </div>
+            
+    </div> 
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; GWD & AR 2024</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+<script>
+    // Function to open modal
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'block';
+    }
+    
+    // Function to close modal
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'none';
+    }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the modal elements
+        const modals = document.querySelectorAll(".modal");
+    
+        // Get all QR buttons
+        const qrButtons = document.querySelectorAll(".qr-button");
+    
+        // Add event listeners for QR buttons
+        qrButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                const targetModalId = this.getAttribute("data-target");
+                openModal(targetModalId);
+            });
+        });
+    
+        // Add event listeners for close buttons
+        modals.forEach(modal => {
+            modal.querySelector(".close").addEventListener("click", function() {
+                const modalId = modal.getAttribute("id");
+                closeModal(modalId);
+            });
+    
+            // Close modal if user clicks outside the modal content
+            window.addEventListener("click", function(event) {
+                if (event.target === modal) {
+                    const modalId = modal.getAttribute("id");
+                    closeModal(modalId);
+                }
+            });
+    
+            // Close modal if user presses the Esc key
+            window.addEventListener("keydown", function(event) {
+                if (event.key === "Escape") {
+                    const modalId = modal.getAttribute("id");
+                    closeModal(modalId);
+                }
+            });
+        });
+    });
+</script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>
