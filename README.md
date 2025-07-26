@@ -14,12 +14,4 @@
 
 ---
 
-## 📦 Technologies Used
-
-- Java (or your preferred language/framework)
-- (Optional: Swing / JavaFX / Web stack if applicable)
-- File-based or local database storage
-
----
-
 > ⚠️ This is a **personal-use** tool. Not intended for commercial deployment.
