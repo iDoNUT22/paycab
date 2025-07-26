@@ -6,11 +6,11 @@
 
 ## 🚀 Features
 
-- 💰 Track incoming and outgoing transactions
-- 🧾 Add transaction descriptions, amounts, dates, and client names
-- 📊 View a summary of total income and expenses
-- 🕒 Mark payments as paid or unpaid
-- 🔍 Simple UI (if UI included) or command-line interface
+- 👤 About Me section to introduce who I am
+- 🛠️ "What Services We Do" section listing available freelance services
+- 💳 Payment info section (manual or external handling)
+- ⭐ Service rating section for client feedback
+- 🔍 Simple and user-friendly interface (web-based or command-line)
 
 ---
 
