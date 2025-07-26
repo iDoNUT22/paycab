@@ -22,11 +22,4 @@
 
 ---
 
-## 📂 How to Use
-
 > ⚠️ This is a **personal-use** tool. Not intended for commercial deployment.
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/paycab.git
-   cd paycab
