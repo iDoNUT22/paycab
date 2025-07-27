@@ -1,7 +1,10 @@
 # 💸 PayCab
 
 **PayCab** is a simple and personal transaction tracking system created to manage and organize my freelance payments and expenditures. This tool helps me keep track of income, outgoing payments, due dates, and client payment status — all in one place.
+---
+Click below to try it live:
 
+👉[Try PayCab](https://paycab.netlify.app/)
 ---
 
 ## 🚀 Features
